@@ -7,14 +7,14 @@ import { Component, Input, Output, EventEmitter, OnChanges, OnInit, AfterViewIni
 })
 export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
 
-  img: string = 'valor init';
+  img = 'valor init';
 
-  @Input('img')
+  @Input()
   set changeImg(newImg: string){
     this.img = newImg;
     console.log('change just image =>', this.img)
   }
-  @Input() alt: string = '';
+  @Input() alt = '';
   @Output() loaded = new EventEmitter<string>();
   imageDefault ='https://www.m2crowd.com/core/i/placeholder.png';
   // counter = 0;
